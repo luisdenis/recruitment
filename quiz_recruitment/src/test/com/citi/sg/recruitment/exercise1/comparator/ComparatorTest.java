@@ -1,6 +1,6 @@
 package com.citi.sg.recruitment.exercise1.comparator;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -8,9 +8,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintStream;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
 import com.citi.sg.recruitment.utils.FileRead;
 
@@ -22,7 +22,7 @@ public class ComparatorTest {
     private ByteArrayInputStream testIn;
     private ByteArrayOutputStream testOut;
 
-    @BeforeEach
+    @Before
     public void setUpOutput() {
         testOut = new ByteArrayOutputStream();
         System.setOut(new PrintStream(testOut));
@@ -37,14 +37,14 @@ public class ComparatorTest {
         return testOut.toString();
     }
 
-    @AfterEach
+    @After
     public void restoreSystemInputOutput() {
         System.setIn(systemIn);
         System.setOut(systemOut);
     }
 
     @Test
-    void test1() throws IOException {
+    public void test1() throws IOException {
         provideInput(FileRead.getFile("comparator/test1_input.txt"));
         Main.main(new String[0]);
         String expected = new String(FileRead.getFile("comparator/test1_expected.txt")).replaceAll("\\r", "");
@@ -53,7 +53,7 @@ public class ComparatorTest {
     }
 
     @Test
-    void test2() throws IOException {
+    public void test2() throws IOException {
         provideInput(FileRead.getFile("comparator/test2_input.txt"));
         Main.main(new String[0]);
         String expected = new String(FileRead.getFile("comparator/test2_expected.txt")).replaceAll("\\r", "");
@@ -62,7 +62,7 @@ public class ComparatorTest {
     }
 
     @Test
-    void test3() throws IOException {
+    public void test3() throws IOException {
         provideInput(FileRead.getFile("comparator/test3_input.txt"));
         Main.main(new String[0]);
         String expected = new String(FileRead.getFile("comparator/test3_expected.txt")).replaceAll("\\r", "");
@@ -71,7 +71,7 @@ public class ComparatorTest {
     }
 
     @Test
-    void test4() throws IOException {
+    public void test4() throws IOException {
         provideInput(FileRead.getFile("comparator/test4_input.txt"));
         Main.main(new String[0]);
         String expected = new String(FileRead.getFile("comparator/test4_expected.txt")).replaceAll("\\r", "");
