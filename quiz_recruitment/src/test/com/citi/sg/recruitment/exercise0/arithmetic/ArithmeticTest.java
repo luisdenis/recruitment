@@ -47,8 +47,8 @@ public class ArithmeticTest {
     public void test1() throws IOException {
         provideInput(FileRead.getFile("arithmetic/test1_input.txt"));
         Main.main(new String[0]);
-        String expected = new String(FileRead.getFile("arithmetic/test1_expected.txt"));
-        String result = getOutput();
+        String expected = new String(FileRead.getFile("arithmetic/test1_expected.txt")).replaceAll("\\r", "");
+        String result = getOutput().replaceAll("\\r", "");
         assertEquals(expected, result);
     }
 
@@ -56,8 +56,8 @@ public class ArithmeticTest {
     public void test2() throws IOException {
         provideInput(FileRead.getFile("arithmetic/test2_input.txt"));
         Main.main(new String[0]);
-        String expected = new String(FileRead.getFile("arithmetic/test2_expected.txt"));
-        String result = getOutput();
+        String expected = new String(FileRead.getFile("arithmetic/test2_expected.txt")).replaceAll("\\r", "");
+        String result = getOutput().replaceAll("\\r", "");
         assertEquals(expected, result);
     }
 
@@ -65,8 +65,8 @@ public class ArithmeticTest {
     public void test3() throws IOException {
         provideInput(FileRead.getFile("arithmetic/test3_input.txt"));
         Main.main(new String[0]);
-        String expected = new String(FileRead.getFile("arithmetic/test3_expected.txt"));
-        String result = getOutput();
+        String expected = new String(FileRead.getFile("arithmetic/test3_expected.txt")).replaceAll("\\r", "");
+        String result = getOutput().replaceAll("\\r", "");
         assertEquals(expected, result);
     }
 
